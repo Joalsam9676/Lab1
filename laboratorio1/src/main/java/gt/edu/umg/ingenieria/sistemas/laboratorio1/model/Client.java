@@ -1,13 +1,11 @@
 package gt.edu.umg.ingenieria.sistemas.laboratorio1.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- *
- * @author Josué Barillas (jbarillas)
- */
+
 @Entity
 public class Client implements Serializable {
 
@@ -18,17 +16,19 @@ public class Client implements Serializable {
     private String nit;
     private String phone;
     private String address;
+    private Date birthdate;
 
     public Client() {
     }
 
-    public Client(Long id, String firstName, String lastName, String nit, String phone, String address) {
+    public Client(Long id, String firstName, String lastName, String nit, String phone, String address, Date birthdate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.nit = nit;
         this.phone = phone;
         this.address = address;
+        this.birthdate = birthdate;
     }
 
     public Long getId() {
@@ -78,6 +78,15 @@ public class Client implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+    
     
     
     
